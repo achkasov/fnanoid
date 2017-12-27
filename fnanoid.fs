@@ -2,11 +2,12 @@ module FNanoid
 
 open System
 
+
 type Random with
   member this.nextBytes n =
     let mutable buffer = Array.zeroCreate<byte> n
     this.NextBytes buffer
-    buffer
+    buffer 
 
 type NanoIdParams = { random: int -> byte[]; alphabet: String; size: int }
 let defaults =
